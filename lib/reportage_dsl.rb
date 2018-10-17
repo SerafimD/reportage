@@ -1,5 +1,6 @@
-require "reportage_dsl/version"
+require 'reportage_dsl/version'
+require 'reportage_dsl/generator'
 
 module ReportageDsl
-  # Your code goes here...
+  # Point of entry <<-
 end

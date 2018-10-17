@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Dmitry"]
   spec.email         = ["avalonsdm@gmail.com"]
 
-  spec.summary       = %q{gem for generationg report in different formats}
-  spec.description   = %q{gem for generationg report in different formats}
+  spec.summary       = %q{gem for generation report in different formats}
+  spec.description   = %q{gem for generation report in different formats}
   spec.homepage      = "https://github.com/SerafimD/reportage_dsl"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
