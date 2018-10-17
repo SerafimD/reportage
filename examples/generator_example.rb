@@ -1,5 +1,3 @@
-# V3
-#
 # Generate PDF
 rep = ReportageDSL::Generator.new
 rep.add [0, 1, 2]
