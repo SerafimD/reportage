@@ -1,4 +1,5 @@
 # reportage_dsl
+[![Build Status](https://travis-ci.org/SerafimD/reportage_dsl.svg?branch=master)](https://travis-ci.org/SerafimD/reportage_dsl)
 
 ## Table of Content
 * [Why reportage_dsl?](#why-reportage_dsl)
