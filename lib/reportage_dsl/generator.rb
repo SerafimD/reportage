@@ -1,6 +1,10 @@
+require 'reportage_dsl/pdf_generator/pdf_generator'
+
 module ReportageDsl
 
   class Generator
+
+    include ReportageDsl::Generator::PdfGenerator
 
     attr_accessor :report_data
 
