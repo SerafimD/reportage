@@ -21,6 +21,13 @@ Add this line to your Gemfile:
 gem 'reportage_dsl'
 
 ```
+And then execute:
+
+    $ bundle
+
+Or install it yourself as:
+
+    $ gem install reportage_dsl
 
 ## Usage
 Generate PDF
