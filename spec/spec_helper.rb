@@ -13,7 +13,7 @@ RSpec.configure do |config|
   end
 
   config.after(:all) do
-    FileUtils.rm_rf(Dir["lib/../spec/output/[^.]pdf"])
+    FileUtils.rm_rf(Dir["lib/../spec/output/*.pdf"])
   end
 
 end

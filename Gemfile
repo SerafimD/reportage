@@ -7,3 +7,7 @@ gemspec
 
 # PDF Generation
 gem 'prawn'
+
+group :development, :test do
+  gem 'pry-byebug'
+end
