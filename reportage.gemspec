@@ -1,17 +1,17 @@
 
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "reportage_dsl/version"
+require "reportage/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "reportage_dsl"
-  spec.version       = ReportageDsl::VERSION
+  spec.name          = "reportage"
+  spec.version       = Reportage::VERSION
   spec.authors       = ["Dmitry"]
   spec.email         = ["avalonsdm@gmail.com"]
 
   spec.summary       = %q{gem for generation report in different formats}
   spec.description   = %q{gem for generation report in different formats}
-  spec.homepage      = "https://github.com/SerafimD/reportage_dsl"
+  spec.homepage      = "https://github.com/SerafimD/reportage"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.

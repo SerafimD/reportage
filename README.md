@@ -1,13 +1,13 @@
-# reportage_dsl
-[![Build Status](https://travis-ci.org/SerafimD/reportage_dsl.svg?branch=master)](https://travis-ci.org/SerafimD/reportage_dsl)
+# reportage
+[![Build Status](https://travis-ci.org/SerafimD/reportage.svg?branch=master)](https://travis-ci.org/SerafimD/reportage)
 
 ## Table of Content
-* [Why reportage_dsl?](#why-reportage_dsl)
+* [Why reportage?](#why-reportage)
 * [Install](#install)
 * [Usage](#usage)
 * [License](#license)
 
-## Why reportage_dsl?
+## Why reportage?
 
 What if you have a bunch of raw data and you need to quickly generate a 
 readable report to show it to your boss / colleague?
@@ -18,7 +18,7 @@ Then this gem will solve your problems.
 Add this line to your Gemfile:
 
 ```ruby
-gem 'reportage_dsl'
+gem 'reportage'
 
 ```
 And then execute:
@@ -27,14 +27,14 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install reportage_dsl
+    $ gem install reportage
 
 ## Usage
 Generate PDF
 ```ruby
-require 'reportage_dsl'
+require 'reportage'
 
-rep = ReportageDSL::Generator.new
+rep = Reportage::Generator.new
 rep.add [0, 1, 2]
 rep.to_pdf
 ```
@@ -42,12 +42,12 @@ rep.to_pdf
 
 Generate XML
 ```ruby
-require 'reportage_dsl'
+require 'reportage'
 
-rep = ReportageDSL::Generator.new
+rep = Reportage::Generator.new
 rep << [0, 1, 2]
 rep.to_xml
 ```
 
 ## License
-reportage_dsl is released under the [MIT License](http://www.opensource.org/licenses/MIT).
+reportage is released under the [MIT License](http://www.opensource.org/licenses/MIT).
