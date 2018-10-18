@@ -28,6 +28,8 @@ RSpec.describe ReportageDsl do
   end
 
   it 'must add new data to base data array add and << method' do
+    subject.filename = 'lib/../spec/output/out.pdf'
+    subject << [1, 2, 3]
     expect(subject.to_pdf).to eq('PDF Generate !!!')
   end
 

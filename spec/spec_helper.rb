@@ -11,4 +11,9 @@ RSpec.configure do |config|
   config.expect_with :rspec do |c|
     c.syntax = :expect
   end
+
+  config.after(:all) do
+    FileUtils.rm_rf(Dir["lib/../spec/output/[^.]pdf"])
+  end
+
 end

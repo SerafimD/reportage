@@ -6,10 +6,11 @@ module ReportageDsl
 
     include ReportageDsl::Generator::PdfGenerator
 
-    attr_accessor :report_data
+    attr_accessor :report_data, :filename
 
     def initialize
       @report_data = []
+      @filename = ''
     end
 
     #
