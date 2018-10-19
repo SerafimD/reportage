@@ -4,3 +4,11 @@ require "rspec/core/rake_task"
 RSpec::Core::RakeTask.new(:spec)
 
 task :default => :spec
+
+namespace :dev do
+  desc 'Build all examples'
+  task :render_all_examples do
+    ruby File.expand_path(File.dirname(__FILE__) + '/examples/generator_example.rb')
+  end
+
+end

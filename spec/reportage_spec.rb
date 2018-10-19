@@ -36,6 +36,7 @@ RSpec.describe Reportage do
   end
 
   it 'must generate XLS report file' do
+    puts subject.class
     file_path = 'lib/../spec/output/out.xls'
     subject.filename = file_path
     subject << [1, 2, 3]
