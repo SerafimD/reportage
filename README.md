@@ -34,7 +34,7 @@ Generate PDF
 ```ruby
 require 'reportage'
 
-rep = Reportage::Generator.new
+rep = Reportage.new
 rep.add [0, 1, 2]
 rep.to_pdf
 ```
@@ -44,7 +44,7 @@ Generate XML
 ```ruby
 require 'reportage'
 
-rep = Reportage::Generator.new
+rep = Reportage.new
 rep << [0, 1, 2]
 rep.to_xml
 ```

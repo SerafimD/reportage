@@ -1,6 +1,6 @@
 RSpec.describe Reportage do
 
-  subject { described_class::Generator.new }
+  subject { described_class.new }
 
   it "has a version number" do
     expect(Reportage::VERSION).not_to be nil
