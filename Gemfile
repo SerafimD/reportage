@@ -7,6 +7,7 @@ gemspec
 
 # PDF Generation
 gem 'prawn'
+gem 'axlsx'
 
 group :development, :test do
   gem 'pry-byebug'

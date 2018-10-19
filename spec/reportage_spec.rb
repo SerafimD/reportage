@@ -27,11 +27,19 @@ RSpec.describe Reportage do
     expect(subject.report_data).to eq([[1, 2, 3], 'Hello world'])
   end
 
-  it 'must add new data to base data array add and << method' do
+  it 'must generate PDF report file' do
     file_path = 'lib/../spec/output/out.pdf'
     subject.filename = file_path
     subject << [1, 2, 3]
     subject.to_pdf
+    expect(File.file?(file_path)).to be true
+  end
+
+  it 'must generate XLS report file' do
+    file_path = 'lib/../spec/output/out.xls'
+    subject.filename = file_path
+    subject << [1, 2, 3]
+    subject.to_xls
     expect(File.file?(file_path)).to be true
   end
 

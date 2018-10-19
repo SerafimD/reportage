@@ -14,6 +14,7 @@ RSpec.configure do |config|
 
   config.after(:all) do
     FileUtils.rm_rf(Dir["lib/../spec/output/*.pdf"])
+    FileUtils.rm_rf(Dir["lib/../spec/output/*.xls"])
   end
 
 end

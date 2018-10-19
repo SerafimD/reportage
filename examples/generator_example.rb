@@ -4,8 +4,8 @@ rep.add [0, 1, 2]
 rep.filename = 'out.pdf'
 rep.to_pdf
 
-#Generate XML
+#Generate XLS
 rep = Reportage.new
 rep << [0, 1, 2]
-rep.filename = 'out.pdf'
-rep.to_xml
+rep.filename = 'out.xls'
+rep.to_xls

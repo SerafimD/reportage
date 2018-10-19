@@ -46,7 +46,7 @@ require 'reportage'
 
 rep = Reportage.new
 rep << [0, 1, 2]
-rep.to_xml
+rep.to_xls
 ```
 
 ## License
