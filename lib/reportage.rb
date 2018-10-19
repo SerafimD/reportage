@@ -9,7 +9,8 @@ class Reportage
   include PDFGenerator
   include XLSGenerator
 
-  attr_accessor :report_data, :filename
+  attr_accessor :report_data, :filename, :pdf
+  # attr_accessor :dx
 
   def initialize
     @report_data = []
