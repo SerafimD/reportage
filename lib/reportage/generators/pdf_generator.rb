@@ -1,7 +1,9 @@
+# require 'pry-byebug'
+
 module PDFGenerator
   def to_pdf(filename)
-    @dx = 0
     @pdf = Prawn::Document.new
+    @indentation = 0
     # Настройка ttf шрифтов для работы с кириллицей
     pdf.font_families.update(
         "Arial" => {
@@ -9,7 +11,6 @@ module PDFGenerator
             :italic => 'lib/reportage/fonts/ArialItalic.ttf',
             :normal  => 'lib/reportage/fonts/ArialRegular.ttf' })
     pdf.font "Arial", :size => 10
-    # pdf.text "#{report_data}", :size => 20, :style => :bold#, :align => :center
     report_data.each do |elem|
       print_elem(elem)
     end
@@ -19,40 +20,49 @@ module PDFGenerator
   end
 
   def print_elem(e)
-    puts "print_elem(e) = #{e}"
     print_string(e) if e.is_a? String
     print_numeric(e) if e.is_a? Numeric
+    print_boolean(e) if boolean? e
     pring_array(e) if e.is_a? Array
     print_hash(e) if e.is_a? Hash
   end
 
-  def print_string(e)
-    puts "print_string e = #{e}"
-    pdf.text(
-      e.to_s,
-      size: 20,
-      style: :bold,
-      align: :left
-    )
+  def boolean?(elem)
+    elem.is_a?(TrueClass) || elem.is_a?(FalseClass)
   end
 
-  def print_numeric e
-    puts "print_numeric e = #{e}"
-    pdf.text e.to_s, :size => 20, :style => :bold, :align => :left
-  end
-
-  def pring_array(e)
-    puts "pring_array(e) = #{e}"
-    e.each do |elem|
-      print_elem(elem)
+  def print_string(elem)
+    pdf.indent(indentation) do
+      pdf.text(elem.to_s, size: 20, style: :bold, align: :left)
     end
   end
 
-  def print_hash(e)
-    puts "print_hash(e) = #{e}"
-    e.keys.each do |key|
+  def print_boolean(elem)
+    pdf.indent(indentation) do
+      pdf.text(elem.to_s, size: 20, style: :bold, align: :left)
+    end
+  end
+
+  def print_numeric(elem)
+    pdf.indent(indentation) do
+      pdf.text elem.to_s, :size => 20, :style => :bold, :align => :left
+    end
+  end
+
+  def pring_array(elem)
+    elem.each do |e|
+      print_elem(e)
+    end
+  end
+
+  def print_hash(elem)
+    elem.keys.each do |key|
       print_string "#{key}: "
-      print_elem e[key]
+      self.indentation += 3
+      pdf.indent(indentation) do
+        print_elem elem[key]
+      end
+      self.indentation -= 3
     end
   end
 

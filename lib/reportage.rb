@@ -9,8 +9,8 @@ class Reportage
   include PDFGenerator
   include XLSGenerator
 
-  attr_accessor :report_data, :pdf
-  # attr_accessor :dx
+  attr_accessor :report_data
+  attr_accessor :indentation, :pdf
 
   def initialize
     @report_data = []
