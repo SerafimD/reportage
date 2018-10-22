@@ -1,5 +1,5 @@
 module XLSGenerator
-  def to_xls
+  def to_xls(filename)
     package = Axlsx::Package.new
     workbook = package.workbook
     name = 'data'

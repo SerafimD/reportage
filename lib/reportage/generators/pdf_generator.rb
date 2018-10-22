@@ -1,5 +1,5 @@
 module PDFGenerator
-  def to_pdf
+  def to_pdf(filename)
     @dx = 0
     @pdf = Prawn::Document.new
     # Настройка ttf шрифтов для работы с кириллицей

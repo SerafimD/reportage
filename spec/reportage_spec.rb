@@ -29,18 +29,16 @@ RSpec.describe Reportage do
 
   it 'must generate PDF report file' do
     file_path = 'lib/../spec/output/out.pdf'
-    subject.filename = file_path
     subject << [1, 2, 3]
-    subject.to_pdf
+    subject.to_pdf file_path
     expect(File.file?(file_path)).to be true
   end
 
   it 'must generate XLS report file' do
     puts subject.class
     file_path = 'lib/../spec/output/out.xls'
-    subject.filename = file_path
     subject << [1, 2, 3]
-    subject.to_xls
+    subject.to_xls file_path
     expect(File.file?(file_path)).to be true
   end
 
