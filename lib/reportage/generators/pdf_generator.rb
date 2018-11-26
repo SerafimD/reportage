@@ -7,9 +7,9 @@ module PDFGenerator
     # Настройка ttf шрифтов для работы с кириллицей
     pdf.font_families.update(
         "Arial" => {
-            :bold => 'lib/reportage/fonts/ArialBold.ttf',
-            :italic => 'lib/reportage/fonts/ArialItalic.ttf',
-            :normal  => 'lib/reportage/fonts/ArialRegular.ttf' })
+            :bold => "#{Reportage::fonts}/ArialBold.ttf",
+            :italic => "#{Reportage::fonts}/ArialItalic.ttf",
+            :normal  => "#{Reportage::fonts}/ArialRegular.ttf" })
     pdf.font "Arial", :size => 10
     report_data.each do |elem|
       print_elem(elem)

@@ -30,4 +30,12 @@ class Reportage
     report_data << data
   end
 
+  def self.root
+    File.dirname __dir__
+  end
+
+  def self.fonts
+    File.join root, 'fonts'
+  end
+
 end
