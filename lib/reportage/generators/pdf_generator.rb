@@ -5,12 +5,12 @@ module PDFGenerator
     @pdf = Prawn::Document.new
     @indentation = 0
     # Настройка ttf шрифтов для работы с кириллицей
-    # pdf.font_families.update(
-    #     "Arial" => {
-    #         :bold => 'lib/reportage/fonts/ArialBold.ttf',
-    #         :italic => 'lib/reportage/fonts/ArialItalic.ttf',
-    #         :normal  => 'lib/reportage/fonts/ArialRegular.ttf' })
-    # pdf.font "Arial", :size => 10
+    pdf.font_families.update(
+        "Arial" => {
+            :bold => 'lib/reportage/fonts/ArialBold.ttf',
+            :italic => 'lib/reportage/fonts/ArialItalic.ttf',
+            :normal  => 'lib/reportage/fonts/ArialRegular.ttf' })
+    pdf.font "Arial", :size => 10
     report_data.each do |elem|
       print_elem(elem)
     end
